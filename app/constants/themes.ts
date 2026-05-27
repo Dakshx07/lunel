@@ -3,8 +3,7 @@
 
 export type ThemeId =
   | 'light'
-  | 'dark'
-  | 'oled';
+  | 'dark';
 export type ThemeOption = ThemeId | 'system';
 
 // =============================================================================
@@ -638,25 +637,6 @@ const darkTheme: ThemeColors = {
   },
 };
 
-const oledTheme: ThemeColors = {
-  ...darkTheme,
-  bg: {
-    base: '#000000',
-    raised: '#0a0a0a',
-    elevated: '#121212',
-  },
-  editor: {
-    bg: '#000000',
-    fg: '#d4d4d4',
-    lineNumbers: '#3a3a3a',
-    selection: '#818cf830',
-  },
-  terminal: {
-    ...darkTheme.terminal,
-    bg: '#000000',
-  },
-};
-
 // =============================================================================
 // Theme Registry
 // =============================================================================
@@ -664,21 +644,18 @@ const oledTheme: ThemeColors = {
 export const themes: Record<ThemeId, ThemeColors> = {
   'light': lightTheme,
   'dark': darkTheme,
-  'oled': oledTheme,
 };
 
 export const themeLabels: Record<ThemeOption, string> = {
   'system': 'System Default',
   'light': 'Light',
   'dark': 'Dark',
-  'oled': 'OLED Black',
 };
 
 export const themeDescriptions: Record<ThemeOption, string> = {
   'system': 'Follows your device appearance setting',
   'light': 'Light theme',
   'dark': 'Dark theme',
-  'oled': 'Pitch black for battery saving',
 };
 
 // =============================================================================
